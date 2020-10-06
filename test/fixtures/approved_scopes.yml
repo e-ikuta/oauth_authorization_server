@@ -1,0 +1,7 @@
+foo:
+  code_credential: sample_code_credential
+  scope: foo
+
+bar:
+  code_credential: sample_code_credential
+  scope: bar

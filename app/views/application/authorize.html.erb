@@ -1,0 +1,14 @@
+<h1>authorize</h1>
+<p>Client ID: <%= @client.client_id %></p>
+<%= form_with scope: :approve, url: approve_path, method: :post, local: true do |f| %>
+  <% if @scopes.size > 0 %>
+    <p>The client is requesting access to the following:</p>
+    <ul>
+      <% @scopes.each do |scope| %>
+        <li><%= f.check_box scope %><%= f.label scope %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.submit "approve" %>
+<% end %>
+<%= button_to "deny", approve_path, name: :deny %>

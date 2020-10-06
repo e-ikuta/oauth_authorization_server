@@ -1,0 +1,4 @@
+ENV:
+  CLIENT_ID: eminem
+  CLIENT_SECRET: 0922
+  REDIRECT_URL: http://localhost:4000/callback

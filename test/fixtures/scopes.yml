@@ -1,0 +1,7 @@
+foo:
+  client: sample_client
+  name: foo
+
+bar:
+  client: sample_client
+  name: bar

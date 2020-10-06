@@ -1,0 +1,7 @@
+sample_uri_1:
+  client: sample_client
+  uri: http://localhost:4001/callback
+
+sample_uri_2:
+  client: sample_client
+  uri: http://localhost:4002/callback

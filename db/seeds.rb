@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+if Client.count.zero?
+  client = Client.create!(
+    client_id: ENV.fetch("CLIENT_ID"),
+    client_secret: ENV.fetch("CLIENT_SECRET"),
+  )
+end
+
+if RedirectUri.count.zero?
+  client.redirect_uris.create!(
+    client: client,
+    uri: ENV.fetch("REDIRECT_URL"),
+  )
+end
+
+if Scope.count.zero?
+  client.scopes.create!([
+    { name: "foo" },
+    { name: "bar" },
+  ])
+end
